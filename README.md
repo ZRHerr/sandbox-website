@@ -80,6 +80,6 @@ Nothing is better than a visual.
 ### **Versions**
 **2.0.0**
 ---
-<img src="./images/version1.png" width="600px">
+<img src="./images/Version1.png" width="600px">
 ---
-<img src="./images/version2.png" width="600px">
+<img src="./images/Version2.png" width="600px">
