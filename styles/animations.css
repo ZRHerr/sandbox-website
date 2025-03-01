@@ -1,0 +1,32 @@
+/* Auto-Scrolling Photo Gallery Animation */
+@keyframes scrollPhotos {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-100%); }
+}
+
+/* Animated Glow Effect */
+@keyframes glow {
+    from { border-color: #64ff64; }
+    to { border-color: #ffffff; }
+}
+
+/* Apply Animation to Photo Gallery */
+.photo-gallery {
+    animation: scrollPhotos 10s linear infinite;
+}
+
+/* Ensure images fit within the box */
+.photo-gallery img {
+    width: 100%;
+    height: auto;
+    max-height: 120px;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border: 2px solid transparent;
+    animation: glow 1.5s infinite alternate;
+}
+
+.photo-gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.6);
+}

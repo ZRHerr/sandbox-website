@@ -15,6 +15,8 @@
 
 - AI Chatbox API (Rate-limited to 3 messages per session)  
 - Email Forwarding (User messages are forwarded via email)  
+- Organized Styles in `/styles/` (modular CSS structure for better maintainability)
+- Integrated Photo Box (Vertically scrolling photo gallery with automated animations)
 
 WIP: Logging, Stock Data Integration, Responsive UI
 
@@ -76,6 +78,8 @@ curl -X POST http://localhost:3000/ask-ai -H "Content-Type: application/json" -H
 Nothing is better than a visual.
 
 ### **Versions**
-*1.0.0
-
-![Version 1](images/version1.png)
+**2.0.0**
+---
+<img src="./images/version1.png" width="600px">
+---
+<img src="./images/version2.png" width="600px">

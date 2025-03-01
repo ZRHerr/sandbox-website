@@ -5,11 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zach's Sandbox</title>
-    <link rel="stylesheet" href="styles.css">
+
+    <link rel="stylesheet" href="styles/general.css"> <!-- General Page Styles -->
+    <link rel="stylesheet" href="styles/layout.css"> <!-- Layout (Gallery & Chat Box) -->
+    <link rel="stylesheet" href="styles/chat.css"> <!-- Chat Box Styling -->
+    <link rel="stylesheet" href="styles/header.css"> <!-- Header & Typing Effect -->
+    <link rel="stylesheet" href="styles/info.css"> <!-- Info Section Styling -->
+    <link rel="stylesheet" href="styles/animations.css"> <!-- Animations -->
+    <!--TODO: organize scripts for readability-->
     <script defer src="script.js"></script>
 </head>
-
-<body>
 
     <div class="container">
         <header>
@@ -19,32 +24,55 @@
                 to chat, I'll be here awaiting your prompt.</p>
         </header>
 
-        <div class="chat-container">
-            <h2>Chat with an AI Model Of Zach</h2>
-            <div id="chat-box">
-                <div id="chat-messages"></div>
+        <body>
+            <div class="container">
+
+                <!-- New Wrapper for Gallery and Chat Box -->
+                <div class="top-page-main-area">
+
+                    <!-- Photo Gallery Section -->
+                    <div class="photo-container">
+                        <h3>My Gallery</h3>
+                        <div class="photo-gallery">
+                            <img src="images/photo1.png" alt="Photo 1">
+                            <img src="images/photo2.png" alt="Photo 2">
+                            <img src="images/photo3.png" alt="Photo 3">
+                        </div>
+                    </div>
+
+                    <!-- Chat Box Section -->
+                    <div class="chat-container">
+                        <h3>Chat with Me</h3>
+                        <div id="chat-box"></div>
+                    
+                        <div class="chat-input-wrapper">
+                            <input type="text" id="user-input" placeholder="Ask me something... (300 characters max)">
+                            <button id="send-btn">Send</button>
+                        </div>
+                    
+                        <!-- Chat Limit Message (Hidden by Default) -->
+                        <p id="chat-limit-msg" style="display: none; color: red; font-weight: bold;">
+                            If you're this curious about me, I'm also curious about you :) ask me directly... ZacharyH@gmail.com
+                        </p>
+                    </div>
+                    
+
+                </div> <!-- End of top-page-main-area -->
+
+                <section id="content">
+                    <div class="info">
+                        <h2>About Me</h2>
+                        <p>Welcome to my website. Here you'll find my projects, contact info, and more.</p>
+                        <ul>
+                            <li><a href="https://linkedin.com/in/zach-profile" target="_blank">LinkedIn</a></li>
+                            <li><a href="projects.html">My Projects</a></li>
+                            <li><a href="mailto:ZacharyH@gmail.com">Contact Me</a></li>
+                        </ul>
+                    </div>
+                </section>
+
             </div>
-            <input type="text" id="user-input" placeholder="Ask me something... (300 characters max)">
-            <button id="send-btn">Send</button>
-            <p id="chat-limit-msg" style="display:none; color:red;">
-                If you're this curious about me, I'm also curious about you :) ask me directly... ZacharyH@gmail.com
-            </p>
-        </div>
 
-        <section id="content">
-            <div class="info">
-                <h2>About Me</h2>
-                <p>Welcome to my website. Here you'll find my projects, contact info, and more.</p>
-                <ul>
-                    <li><a href="https://linkedin.com/in/zach-profile" target="_blank">LinkedIn</a></li>
-                    <li><a href="projects.html">My Projects</a></li>
-                    <li><a href="mailto:ZacharyH@gmail.com">Contact Me</a></li>
-                </ul>
-            </div>
-        </section>
-
-    </div>
-
-</body>
+        </body>
 
 </html>

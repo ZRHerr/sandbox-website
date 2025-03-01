@@ -6,11 +6,15 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
     // Get references to chat UI elements
     let chatBox = document.getElementById("chat-box");
-    let chatMessages = document.getElementById("chat-messages");
     let userInput = document.getElementById("user-input");
     let sendBtn = document.getElementById("send-btn");
     let chatLimitMsg = document.getElementById("chat-limit-msg");
 
+    // If any critical elements are missing, log an error and stop execution
+    if (!chatBox || !userInput || !sendBtn) {
+        console.error("One or more required chat elements are missing from the DOM.");
+        return;
+    }
     // Define chat attempt limits
     let chatCount = 0;
     const maxChatCount = 3;
@@ -22,15 +26,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Get and sanitize user input
         let userText = userInput.value.trim();
-        
+
         // Prevent empty messages or messages exceeding the 300-character limit
         if (userText.length === 0 || userText.length > 300) return;
-
+        
         // Display user's message in the chat
         appendMessage("You: " + userText);
         chatCount++; // Increment chat counter
 
-        // Send the user prompt to the AI API
+        // TODO: AI feature
         fetch("/ask-ai", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -38,8 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .then(response => response.json()) // Parse JSON response
         .then(data => appendMessage("AI: " + data.response)) // Display AI response
-        .catch(() => appendMessage("AI: Something cool is supposed to be here, but an error is stopping it.")); // Handle errors gracefully
-
+        .catch(() => appendMessage("AI: Something cool is supposed to be here, but an error is stopping it."));
         // Clear input field after sending message
         userInput.value = "";
 
@@ -47,7 +50,9 @@ document.addEventListener("DOMContentLoaded", function () {
         if (chatCount === maxChatCount) {
             userInput.disabled = true;
             sendBtn.disabled = true;
+            if (chatLimitMsg) {
             chatLimitMsg.style.display = "block";
+            }
         }
     });
 
@@ -58,9 +63,29 @@ document.addEventListener("DOMContentLoaded", function () {
     function appendMessage(message) {
         let messageDiv = document.createElement("div");
         messageDiv.textContent = message;
-        chatMessages.appendChild(messageDiv);
 
+        // Ensure chat-box exists before appending to avoid errors
+        if (!chatBox) {
+            console.error("chat-box element not found.");
+            return;
+        }
+
+        chatBox.appendChild(messageDiv);
         // Auto-scroll chat to the latest message
         chatBox.scrollTop = chatBox.scrollHeight;
     }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    let images = document.querySelectorAll(".photo-gallery img");
+    let currentIndex = 0;
+
+    function cycleImages() {
+        images.forEach((img, index) => {
+            img.style.opacity = index === currentIndex ? "1" : "0.5";
+        });
+        currentIndex = (currentIndex + 1) % images.length;
+    }
+
+    setInterval(cycleImages, 5000);
 });

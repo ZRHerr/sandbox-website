@@ -1,0 +1,27 @@
+/* Info Section */
+.info {
+    margin-top: 20px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+.info h2 {
+    color: #64ff64;
+}
+
+.info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.info ul li a {
+    color: #aaffaa;
+    text-decoration: none;
+    font-weight: bold;
+}
