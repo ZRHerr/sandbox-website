@@ -1,0 +1,40 @@
+/* ========================================= */
+/* PHOTO CONTAINER (MAIN WRAPPER)            */
+/* ========================================= */
+.photo-container {
+    position: relative;
+    width: 25%;
+    height: 300px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.515);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/* ========================================= */
+/* PHOTO GALLERY STYLING                     */
+/* ========================================= */
+.photo-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    animation: scrollPhotos 10s linear infinite;
+}
+
+/* ========================================= */
+/* IMAGE EFFECTS                             */
+/* ========================================= */
+.photo-gallery img {
+    width: 100%;
+    height: auto;
+    max-height: 120px;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border: 2px solid transparent;
+    animation: glow 1.5s infinite alternate;
+}
+
+.photo-gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.6);
+}

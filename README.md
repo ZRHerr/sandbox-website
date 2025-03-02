@@ -17,6 +17,8 @@
 - Email Forwarding (User messages are forwarded via email)  
 - Organized Styles in `/styles/` (modular CSS structure for better maintainability)
 - Integrated Photo Box (Vertically scrolling photo gallery with automated animations)
+- World Clock Component (Displays live time for key time zones)
+- Navigation Bar (Interactive, dynamic content loading)
 
 WIP: Logging, Stock Data Integration, Responsive UI
 
@@ -78,8 +80,9 @@ curl -X POST http://localhost:3000/ask-ai -H "Content-Type: application/json" -H
 Nothing is better than a visual.
 
 ### **Versions**
-**2.0.0**
----
-<img src="./images/Version1.png" width="600px">
+**3.0.0**
+<img src="./images/Version3.png" width="600px">
 ---
 <img src="./images/Version2.png" width="600px">
+---
+<img src="./images/Version1.png" width="600px">

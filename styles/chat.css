@@ -1,48 +1,112 @@
-/* Chat Box */
+/* ========================================= */
+/* CHAT & CLOCK WRAPPER                      */
+/* ========================================= */
+.chat-wrapper {
+    display: flex;
+    width: 90%;
+    max-width: 800px;
+    background: rgba(0, 0, 0, 0.515);
+    padding: 20px;
+    border-radius: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .chat-container {
-    background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-    padding: 15px;
-    width: 350px;
-    height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-    flex: 2;
+    width: 75%;
+    height: 100%;
 }
 
-/* Chat Box Content */
-#chat-box {
-    height: 300px;
-    width: 100%;
-    overflow-y: auto;
-    background: #222;
-    padding: 10px;
-    border-radius: 5px;
+.chat-header {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
     color: white;
     margin-bottom: 10px;
 }
 
-/* Chat Input and Button */
-.chat-input-wrapper {
+/* ========================================= */
+/* CHAT BOX (MESSAGE DISPLAY & INPUT)        */
+/* ========================================= */
+.chat-box {
+    width: 75vw;
+    max-width: 900px;
+    min-width: 500px;
+    background: rgba(0, 0, 0, 0.515);
+    padding: 20px;
+    border-radius: 10px;
     display: flex;
-    width: 100%;
-    gap: 5px;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-input {
-    flex: 3;
-    padding: 8px;
+/* ========================================= */
+/* CHAT OUTPUT AREA                          */
+/* ========================================= */
+.chat-output {
+    flex-grow: 1;
+    min-height: 200px;
+    background: black;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-y: auto;
+}
+
+/* ========================================= */
+/* CHAT INPUT & BUTTON                       */
+/* ========================================= */
+.chat-input-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background: rgba(0, 50, 0, 0.4);
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: auto;
+}
+
+.chat-input-wrapper input {
+    flex: 4;
+    padding: 10px;
     border: none;
     border-radius: 5px;
+    background: white;
+    color: black;
+    font-size: 16px;
 }
 
-button {
-    flex: 1;
+.chat-input-wrapper button {
     background-color: #64ff64;
     cursor: pointer;
-    padding: 8px;
+    padding: 10px;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.chat-input-wrapper button:hover {
+    background-color: #32cd32;
+}
+
+/* ========================================= */
+/* RESPONSIVE DESIGN                         */
+/* ========================================= */
+@media (max-width: 800px) {
+    .chat-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #world-clock-container {
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+        width: 100%;
+        margin-top: 15px;
+    }
 }

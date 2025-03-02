@@ -1,0 +1,58 @@
+/* ========================================= */
+/* NAVIGATION BAR (MAIN CONTAINER)           */
+/* ========================================= */
+#navbar {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.515);
+  position: relative;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+}
+
+/* ========================================= */
+/* NAVIGATION MENU STYLING                   */
+/* ========================================= */
+#navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#navbar li {
+  margin: 0 15px;
+}
+
+/* ========================================= */
+/* NAVIGATION LINKS                          */
+/* ========================================= */
+#navbar a {
+  color: #a0ffa0;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px 8px;
+  border-radius: 3px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s, text-shadow 0.3s, border-bottom-color 0.3s;
+}
+
+#navbar a:hover {
+  text-shadow: 0 0 8px #00ff00;
+  color: #00ff00;
+}
+
+/* Active tab indicator */
+#navbar a.active {
+  color: #00ff00;
+  border-bottom-color: #00ff00;
+}
+
+/* ========================================= */
+/* PAGE CONTENT SPACING                      */
+/* ========================================= */
+#content {
+  padding: 20px;
+}

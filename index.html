@@ -6,73 +6,125 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zach's Sandbox</title>
 
-    <link rel="stylesheet" href="styles/general.css"> <!-- General Page Styles -->
-    <link rel="stylesheet" href="styles/layout.css"> <!-- Layout (Gallery & Chat Box) -->
-    <link rel="stylesheet" href="styles/chat.css"> <!-- Chat Box Styling -->
-    <link rel="stylesheet" href="styles/header.css"> <!-- Header & Typing Effect -->
-    <link rel="stylesheet" href="styles/info.css"> <!-- Info Section Styling -->
-    <link rel="stylesheet" href="styles/animations.css"> <!-- Animations -->
-    <!--TODO: organize scripts for readability-->
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/chat.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/worldclock.css">
+    <link rel="stylesheet" href="styles/info.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <link rel="stylesheet" href="styles/photocontainer.css">
+    <link rel="stylesheet" href="styles/navbar.css">
+
+    <!-- JavaScript -->
     <script defer src="script.js"></script>
 </head>
 
+<body>
     <div class="container">
+        
+        <!-- Navigation Bar -->
         <header>
-            <h1>Zach's Sandbox</h1>
-            <p class="typing-text">Hello..... Welcome to Zach's Sandbox, if you have any questions about Zach or just
-                want
-                to chat, I'll be here awaiting your prompt.</p>
+            <nav id="navbar">
+                <ul>
+                    <li><a href="#" data-page="index.html" class="active">Home</a></li>
+                    <li><a href="#" data-page="index.html">Page1</a></li> <!-- TODO-->
+                    <li><a href="#" data-page="index.html">Page2</a></li> <!-- TODO-->
+                    <li><a href="#" data-page="index.html">Page3</a></li> <!-- TODO-->
+                </ul>
+            </nav>
+            <p class="typing-text">
+                Formal education will make you a living; self-education will make you a fortune.
+            </p>
         </header>
 
-        <body>
-            <div class="container">
+        <!-- Main Content Layout -->
+        <div class="top-page-main-area">
 
-                <!-- New Wrapper for Gallery and Chat Box -->
-                <div class="top-page-main-area">
-
-                    <!-- Photo Gallery Section -->
-                    <div class="photo-container">
-                        <h3>My Gallery</h3>
-                        <div class="photo-gallery">
-                            <img src="images/photo1.png" alt="Photo 1">
-                            <img src="images/photo2.png" alt="Photo 2">
-                            <img src="images/photo3.png" alt="Photo 3">
-                        </div>
-                    </div>
-
-                    <!-- Chat Box Section -->
-                    <div class="chat-container">
-                        <h3>Chat with Me</h3>
-                        <div id="chat-box"></div>
-                    
-                        <div class="chat-input-wrapper">
-                            <input type="text" id="user-input" placeholder="Ask me something... (300 characters max)">
-                            <button id="send-btn">Send</button>
-                        </div>
-                    
-                        <!-- Chat Limit Message (Hidden by Default) -->
-                        <p id="chat-limit-msg" style="display: none; color: red; font-weight: bold;">
-                            If you're this curious about me, I'm also curious about you :) ask me directly... ZacharyH@gmail.com
-                        </p>
-                    </div>
-                    
-
-                </div> <!-- End of top-page-main-area -->
-
-                <section id="content">
-                    <div class="info">
-                        <h2>About Me</h2>
-                        <p>Welcome to my website. Here you'll find my projects, contact info, and more.</p>
-                        <ul>
-                            <li><a href="https://linkedin.com/in/zach-profile" target="_blank">LinkedIn</a></li>
-                            <li><a href="projects.html">My Projects</a></li>
-                            <li><a href="mailto:ZacharyH@gmail.com">Contact Me</a></li>
-                        </ul>
-                    </div>
-                </section>
-
+            <!-- Photo Gallery Section -->
+            <div class="photo-container">
+                <h3>My Gallery</h3>
+                <div class="photo-gallery">
+                    <img src="images/photo1.png" alt="Photo 1">
+                    <img src="images/photo2.png" alt="Photo 2">
+                    <img src="images/photo3.png" alt="Photo 3">
+                    <img src="images/photo4.png" alt="Photo 4">
+                    <img src="images/photo5.png" alt="Photo 5">
+                    <img src="images/photo6.png" alt="Photo 6">
+                </div>
             </div>
 
-        </body>
+            <!-- Chat & Clock Section -->
+            <div class="chat-wrapper">
+
+                <!-- Chat Box -->
+                <div class="chat-container">
+                    <h3>Chat with Me</h3>
+                    <div id="chat-box"></div>
+
+                    <div class="chat-input-wrapper">
+                        <input type="text" id="user-input" placeholder="Ask me something... (300 characters max)">
+                        <button id="send-btn">Send</button>
+                    </div>
+
+                    <!-- Chat Limit Message (Hidden by Default) -->
+                    <p id="chat-limit-msg" style="display: none; color: red; font-weight: bold;">
+                        Ask me directly... ZacharyH@gmail.com
+                    </p>
+                </div>
+
+                <!-- World Clock -->
+                <div id="world-clock-container">
+                    <div class="clock-container" data-timezone="America/New_York">
+                        <div class="clock-face">
+                            <div class="hour-marker"></div><div class="hour-marker"></div>
+                            <div class="hour-marker"></div><div class="hour-marker"></div>
+                            <div class="hour-hand"></div><div class="minute-hand"></div>
+                            <div class="second-hand"></div><div class="center-dot"></div>
+                        </div>
+                        <p class="clock-label">New York</p>
+                    </div>
+
+                    <div class="clock-container" data-timezone="Europe/London">
+                        <div class="clock-face">
+                            <div class="hour-marker"></div><div class="hour-marker"></div>
+                            <div class="hour-marker"></div><div class="hour-marker"></div>
+                            <div class="hour-hand"></div><div class="minute-hand"></div>
+                            <div class="second-hand"></div><div class="center-dot"></div>
+                        </div>
+                        <p class="clock-label">London</p>
+                    </div>
+
+                    <div class="clock-container" data-timezone="Asia/Tokyo">
+                        <div class="clock-face">
+                            <div class="hour-marker"></div><div class="hour-marker"></div>
+                            <div class="hour-marker"></div><div class="hour-marker"></div>
+                            <div class="hour-hand"></div><div class="minute-hand"></div>
+                            <div class="second-hand"></div><div class="center-dot"></div>
+                        </div>
+                        <p class="clock-label">Tokyo</p>
+                    </div>
+                </div>
+
+            </div> <!-- End of chat-wrapper -->
+
+        </div> <!-- End of top-page-main-area -->
+
+        <!-- About Me Section -->
+        <section id="content">
+            <div class="info">
+                <h2>About Me</h2>
+                <p>Welcome to my website. Here you'll find my projects, contact info, and more.</p>
+                <ul>
+                    <li><a href="https://linkedin.com/in/zach-profile" target="_blank">LinkedIn</a></li>
+                    <li><a href="projects.html">My Projects</a></li>
+                    <li><a href="mailto:ZacharyH@gmail.com">Contact Me</a></li>
+                </ul>
+            </div>
+        </section>
+
+    </div>
+
+</body>
 
 </html>

@@ -1,9 +1,14 @@
-/* Header */
+/* ========================================= */
+/* HEADER STYLING                            */
+/* ========================================= */
 header h1 {
     font-size: 2.5em;
     color: #64ff64;
 }
 
+/* ========================================= */
+/* TYPING EFFECT                             */
+/* ========================================= */
 .typing-text {
     font-size: 1.2em;
     color: #aaffaa;
@@ -12,15 +17,4 @@ header h1 {
     border-right: 2px solid;
     width: 0;
     animation: typing 3s steps(40, end) forwards, blink 0.7s step-end infinite;
-}
-
-/* Typing Effect */
-@keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
-}
-
-@keyframes blink {
-    from { border-color: transparent; }
-    to { border-color: #64ff64; }
 }

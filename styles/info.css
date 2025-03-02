@@ -1,25 +1,35 @@
-/* Info Section */
+/* ========================================= */
+/* INFO SECTION (MAIN CONTAINER)             */
+/* ========================================= */
 .info {
     margin-top: 20px;
     padding: 10px;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.515);
     border-radius: 8px;
 }
 
+/* ========================================= */
+/* HEADINGS                                  */
+/* ========================================= */
 .info h2 {
     color: #64ff64;
 }
 
+/* ========================================= */
+/* LIST STYLING                              */
+/* ========================================= */
 .info ul {
     list-style: none;
     padding: 0;
 }
-
 .info ul li {
     display: inline;
     margin: 0 10px;
 }
 
+/* ========================================= */
+/* LINKS                                     */
+/* ========================================= */
 .info ul li a {
     color: #aaffaa;
     text-decoration: none;

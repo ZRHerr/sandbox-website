@@ -1,0 +1,169 @@
+/* ========================================= */
+/* WORLD CLOCK CONTAINER (MAIN WRAPPER)      */
+/* ========================================= */
+/* Holds all clocks and ensures proper positioning next to the chat box */
+#world-clock-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 15px;
+    min-width: 100px;
+}
+
+/* ========================================= */
+/* CLOCK CONTAINER (INDIVIDUAL CLOCK BOX)    */
+/* ========================================= */
+/* Holds each individual clock and applies background + glow effect */
+.clock-container {
+    position: relative;
+    width: 100px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle, #dddddd 30%, #aaaaaa 100%);
+    box-shadow: 0px 0px 10px 3px rgba(0, 255, 0, 0.6);
+    border-radius: 50%;
+}
+
+/* Shrinks clocks for smaller screens */
+@media (max-width: 600px) {
+    .clock-container {
+        width: 60px;
+        height: 60px;
+    }
+
+    .clock-label {
+        font-size: 12px;
+    }
+}
+
+/* ========================================= */
+/*  CLOCK LABEL (TEXT ABOVE CLOCK)           */
+/* ========================================= */
+.clock-label {
+    position: absolute;
+    top: -30px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    width: 100px;
+}
+
+/* ========================================= */
+/* CLOCK FACE (BACKGROUND OF THE CLOCK)      */
+/* ========================================= */
+/* Ensures clock face stays centered */
+.clock-face {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Adds a black circular border around the clock face */
+.clock-face::before {
+    content: "";
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    top: 5%;
+    left: 5%;
+    border-radius: 50%;
+    border: 2px solid black;
+}
+
+/* ========================================= */
+/* CLOCK HANDS (HOUR, MINUTE, SECOND)        */
+/* ========================================= */
+.hour-hand,
+.minute-hand,
+.second-hand {
+    position: absolute;
+    background: white;
+    transform-origin: 50% 100%;
+    border-radius: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.hour-hand {
+    width: 5px;
+    height: 30%;
+    bottom: 50%;
+}
+
+.minute-hand {
+    width: 3px;
+    height: 40%;
+    bottom: 50%;
+}
+
+.second-hand {
+    width: 2px;
+    height: 45%;
+    bottom: 50%;
+    background: red;
+}
+
+/* ========================================= */
+/* CENTER DOT (MIDDLE OF CLOCK)              */
+/* ========================================= */
+.center-dot {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: black;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* ========================================= */
+/* HOUR MARKERS (DOTS AT 12, 3, 6, 9)        */
+/* ========================================= */
+.hour-marker {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: black;
+    border-radius: 50%;
+}
+
+.hour-marker:nth-child(1) {
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* 12 o'clock */
+.hour-marker:nth-child(2) {
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+}
+
+/* 3 o'clock */
+.hour-marker:nth-child(3) {
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* 6 o'clock */
+.hour-marker:nth-child(4) {
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+}
+
+/* 9 o'clock */
+
+/* ========================================= */
+/* HOVER EFFECT (INCREASE GLOW)              */
+/* ========================================= */
+.clock-container:hover {
+    box-shadow: 0px 0px 20px 10px rgba(0, 255, 0, 0.8);
+}
